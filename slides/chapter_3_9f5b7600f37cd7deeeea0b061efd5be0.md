@@ -15,7 +15,7 @@ name: Upendra Devisetty
 title: Data Scientist, Greenlight Biosciences
 
 `@script`
-Automated report generation takes away the pain of manually generating reports. In this video, we will explore how we can automate the process of report generation using a simple python script
+Automated report generation takes away the pain of manually generating reports one at a time. In this video, we will explore how we can automate the process of report generation using a simple python script
 
 ---
 
