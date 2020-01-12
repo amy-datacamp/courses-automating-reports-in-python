@@ -1,6 +1,6 @@
 ---
-title: 'Chapter Title Here'
-description: 'Chapter description goes here.'
+title: 'Communicating Data science through reports'
+description: 'This lesson is the introduction to reporting in Python for Data Science'
 ---
 
 ## Example coding exercise
