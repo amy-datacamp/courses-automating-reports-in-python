@@ -91,10 +91,8 @@ code_zoom: 66
 </body>
 ```
 
-
 `@script`
-First, we will create the Jinja2 template file. We will generate one report for each of the 5 data frames with the same Jinja2 template file, and generate them by passing each data frame to the template along with the interest rate used. 
-
+First, we will create the Jinja2 template file. We will generate one report for each of the 5 data frames with the same Jinja2 template file, and generate them by passing each data frame to the template along with the interest rate used.
 
 ---
 
@@ -122,7 +120,6 @@ for d in data_frames:
     html_file.write(outputText)
     html_file.close()
 ```
-
 
 `@script`
 After creating this template, we then write this simple Python code to produce 5 HTML files for our reports. This creates 5 html reports corresponding for each of the interest rate.
@@ -154,12 +151,10 @@ key: 72106380d2
 `@part1`
 ```
 import pdfkit
-for i in range(1,11):
+for i in range(1,6):
     pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
+
 ```
-[](https://assets.datacamp.com/production/repositories/5657/datasets/b5d62f6f676c571bfd0a6ad4c22d531f791b3e54/html_pdf.png)
-
-
 
 `@script`
 The final step of the process is that we need to convert these HTML files to PDFs. To do this, we use pdfkit. All you have to do is iterate through your HTML files and then use a single line of code from pdfkit to each file to convert it into a pdf. All of this code combined will pop out the following HTML files with PDF versions.
@@ -209,7 +204,7 @@ for i in range(1,6):
 ```
 
 `@script`
-Here I have shown you the full script using which you can create reports using python in an automated way. Using this example and with more work, you can develop much more sophisticated reports. 
+Here I have shown you the full script using which you can create reports using python in an automated way. Using this example and with more work, you can develop much more sophisticated reports.
 
 ---
 
