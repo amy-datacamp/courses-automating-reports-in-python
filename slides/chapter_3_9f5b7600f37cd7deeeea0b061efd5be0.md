@@ -144,6 +144,72 @@ The html report looks something when you open it on a browser on on your compute
 
 ---
 
+## Automatic conversion of HMTL to PDF
+
+```yaml
+type: FullSlide
+key: 72106380d2
+```
+
+`@part1`
+```
+import pdfkit
+for i in range(1,11):
+    pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
+```
+
+`@script`
+The final step of the process is that we need to convert these HTML files to PDFs. To do this, we use pdfkit. All you have to do is iterate through your HTML files and then use a single line of code from pdfkit to each file to convert it into a pdf. All of this code combined will pop out the following HTML files with PDF versions.
+
+---
+
+## Final script
+
+```yaml
+type: FullSlide
+key: c1692b4b00
+code_zoom: 40
+```
+
+`@part1`
+```
+import pandas as pd
+import pdfkit
+import jinja2
+
+interest_rates = [i*.01 for i in range(1,6)]
+initial_account_sizes = [100, 500, 20000, 50000]
+data_frames = []
+for interest_rate in interest_rates:
+    df = {}
+    for initial_account_size in initial_account_sizes:
+        df['Account Size: ' + str(initial_account_size)] = [initial_account_size * (1 + interest_rate) ** year for year in range(1, 21)]
+    df = pd.DataFrame(df)
+    df.index.name = 'year'
+    data_frames.append({'df':df,
+        'interest_rate':interest_rate})
+
+templateLoader = jinja2.FileSystemLoader(searchpath="./")
+templateEnv = jinja2.Environment(loader=templateLoader)
+template_file = "pdf_interest_report.html"
+template = templateEnv.get_template(template_file)
+
+for d in data_frames:
+    outputText = template.render(df=d['df'],
+            interest_rate=d['interest_rate'])
+    html_file = open(str(int(d['interest_rate'] * 100)) + '.html', 'w')
+    html_file.write(outputText)
+    html_file.close()
+    
+for i in range(1,6):
+    pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
+```
+
+`@script`
+Here I have shown you the full script using which you can create reports using python in an automated way. Using this example and with more work, you can develop much more sophisticated reports. 
+
+---
+
 ## Let's practice!
 
 ```yaml
@@ -152,3 +218,4 @@ key: bdbaf150de
 ```
 
 `@script`
+For now, let's practice creating some automated reports on a real-world dataset now.
