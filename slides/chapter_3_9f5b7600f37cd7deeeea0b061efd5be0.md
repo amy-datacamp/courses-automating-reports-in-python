@@ -140,7 +140,7 @@ key: 9adc490b39
 ![](https://assets.datacamp.com/production/repositories/5657/datasets/9eab5a3d6554d6ded212f5b8224747865cac764b/html_report_df_0_ss.png)
 
 `@script`
-The html report looks something when you open it on a browser on on your computer
+The HTML report looks something like this when you open it on a browser on on your computer.
 
 ---
 
@@ -157,6 +157,9 @@ import pdfkit
 for i in range(1,11):
     pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
 ```
+[](https://assets.datacamp.com/production/repositories/5657/datasets/b5d62f6f676c571bfd0a6ad4c22d531f791b3e54/html_pdf.png)
+
+
 
 `@script`
 The final step of the process is that we need to convert these HTML files to PDFs. To do this, we use pdfkit. All you have to do is iterate through your HTML files and then use a single line of code from pdfkit to each file to convert it into a pdf. All of this code combined will pop out the following HTML files with PDF versions.
