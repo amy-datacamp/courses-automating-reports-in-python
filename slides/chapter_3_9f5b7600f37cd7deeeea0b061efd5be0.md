@@ -61,6 +61,43 @@ Let’s say you want to print PDFs of tables that show the growth of a bank acco
 
 ---
 
+## Create Jinja2 template file
+
+```yaml
+type: FullSlide
+key: 40ab409493
+code_zoom: 66
+```
+
+`@part1`
+```
+<head></head>
+<body>
+    <h1>Interest Rate: {{ interest_rate * 100 }}%</h1>
+    <table>
+        <tr>
+            {% for column in df.columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for idx, row in df.iterrows() %}
+        <tr>
+            {% for colname in df.columns %}
+            <td>${{ row[colname] | round(1) }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+```
+
+
+`@script`
+First, we will create the Jinja2 template file. We will generate one report for each of the 5 data frames with the same Jinja2 template file, and generate them by passing each data frame to the template along with the interest rate used. 
+
+
+---
+
 ## Let's practice!
 
 ```yaml
