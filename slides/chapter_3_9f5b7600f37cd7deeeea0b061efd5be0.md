@@ -19,6 +19,21 @@ Automated report generation takes away the pain of manually generating reports. 
 
 ---
 
+## Need for an automated PDF report generation
+
+```yaml
+type: FullSlide
+key: 4cb6ae0739
+```
+
+`@part1`
+
+
+`@script`
+
+
+---
+
 ## Let's practice!
 
 ```yaml
