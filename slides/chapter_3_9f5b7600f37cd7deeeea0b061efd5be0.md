@@ -27,10 +27,20 @@ key: 4cb6ae0739
 ```
 
 `@part1`
+- Automated Excel reporting with Python {{1}}
 
+- PDF format is the preferred method of reporting in Data Science {{2}}
+
+- Open source tools to aid in automated pdf report generation in Python: {{3}}
+
+	* Pandas {{4}}
+    
+    * Jinja2 {{5}}
+    
+    * pdfkit {{6}}
 
 `@script`
-
+In the previous chapter, we looked at how we can automate Excel reporting using Python. However, the most preferred method of report generation for a Data Scientist is a PDF report. In order to do that, we will use the open-source tools which you have been introduced to in the previous lessons such as Pandas, Jinja2 and pdfkit.
 
 ---
 
