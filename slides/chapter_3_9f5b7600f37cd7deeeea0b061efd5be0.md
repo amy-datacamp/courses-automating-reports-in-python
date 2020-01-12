@@ -61,7 +61,7 @@ Let’s say you want to print PDFs of tables that show the growth of a bank acco
 
 ---
 
-## Create Jinja2 template file
+## Create a Jinja2 template file
 
 ```yaml
 type: FullSlide
