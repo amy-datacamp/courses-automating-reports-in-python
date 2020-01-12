@@ -44,6 +44,23 @@ In the previous chapter, we looked at how we can automate Excel reporting using 
 
 ---
 
+## Introduction to the example data
+
+```yaml
+type: FullSlide
+key: 0b641e6ccd
+```
+
+`@part1`
+- Example dataset
+
+![](https://assets.datacamp.com/production/repositories/5657/datasets/06ebc5cd542e62ecacdcc7aefbcc6feaaa09b92c/df_0_ss.png)
+
+`@script`
+Let’s say you want to print PDFs of tables that show the growth of a bank account. Each table shows the growth rate year by year of $100, $500, $20,000, and $50,000 dollars. Each separate pdf report uses a different interest rate to calculate the growth rate. We’ll need 5 different reports, each of which prints tables with 1%, 2%, 3%, 4%, 5% interest rates, respectively.
+
+---
+
 ## Let's practice!
 
 ```yaml
