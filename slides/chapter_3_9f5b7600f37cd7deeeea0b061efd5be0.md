@@ -98,6 +98,52 @@ First, we will create the Jinja2 template file. We will generate one report for 
 
 ---
 
+## Create HTML reports using Jinja2 template
+
+```yaml
+type: FullSlide
+key: bef722fe00
+code_zoom: 85
+```
+
+`@part1`
+```
+import jinja2
+
+templateLoader = jinja2.FileSystemLoader(searchpath="./")
+templateEnv = jinja2.Environment(loader=templateLoader)
+template_file = "pdf_interest_report.html"
+template = templateEnv.get_template(template_file)
+
+for d in data_frames:
+    outputText = template.render(df=d['df'],
+            interest_rate=d['interest_rate'])
+    html_file = open(str(int(d['interest_rate'] * 100)) + '.html', 'w')
+    html_file.write(outputText)
+    html_file.close()
+```
+
+
+`@script`
+After creating this template, we then write this simple Python code to produce 5 HTML files for our reports. This creates 5 html reports corresponding for each of the interest rate.
+
+---
+
+## An example HTML report
+
+```yaml
+type: FullSlide
+key: 9adc490b39
+```
+
+`@part1`
+![](https://assets.datacamp.com/production/repositories/5657/datasets/9eab5a3d6554d6ded212f5b8224747865cac764b/html_report_df_0_ss.png)
+
+`@script`
+The html report looks something when you open it on a browser on on your computer
+
+---
+
 ## Let's practice!
 
 ```yaml
