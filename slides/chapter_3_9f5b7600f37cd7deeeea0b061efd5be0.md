@@ -66,12 +66,30 @@ Let’s say you want to print PDFs of tables that show the growth of a bank acco
 ```yaml
 type: FullSlide
 key: 40ab409493
-code_zoom: 66
+code_zoom: 30
 ```
 
 `@part1`
 ```
-<head></head>
+<head>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 6px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+</head>
 <body>
     <h1>Interest Rate: {{ interest_rate * 100 }}%</h1>
     <table>
@@ -134,7 +152,7 @@ key: 9adc490b39
 ```
 
 `@part1`
-![](https://assets.datacamp.com/production/repositories/5657/datasets/9eab5a3d6554d6ded212f5b8224747865cac764b/html_report_df_0_ss.png)
+![](https://assets.datacamp.com/production/repositories/5657/datasets/af332ce84da93e2f9f243ce7644b4898ebf525cf/html_report_df_0_ss.png)
 
 `@script`
 The HTML report looks something like this when you open it on a browser on on your computer.
