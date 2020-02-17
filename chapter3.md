@@ -103,13 +103,9 @@ xp: 100
 
 In the previous exercise, we have created a list of DataFrames with each DataFrame contains values of each of the 5 interest sizes. Next, we will create the Jinja2 template file. We will generate one report for each of the 5 DataFrames with the same Jinja2 template file, and generate them by passing each data frame to the template along with the interest rate used.
 
-Here is a very simple template, let’s call it myreport.html :
+To populate those variable, we need to first create a Jinja environment and get our template. After creating this template, we then write a simple Python code to produce 5 HTML files for our reports. This creates 5 html reports corresponding for each of the interest rate.
 
-![https://assets.datacamp.com/production/repositories/5657/datasets/ec1cdb43d47a3e20dba7ec5efe70f55b0906dafc/jinja_template.png]()
-
-To populate those variable, we need to first create a Jinja environment and get our template. Next to populate those variable, we need to create a Jinja environment and get our template.
-
-Note: The `myreport.html` template has already been created and loaded for you and so there is no need to create one. Also `data_frames` variable has been loaded for you
+Note: The `myreport.html` template and `data_frames` variables have been loaded for you
 
 `@instructions`
 - Create a Jinja environment and get our template
@@ -194,4 +190,46 @@ for d in data_frames:
 `@sct`
 ```{python}
 Good job on creating the Jinja2 template and converting it to html. Get ready to turn this into beautiful pdf reports in the next exercise
+```
+
+---
+
+## Create an automated PDF report - Part III
+
+```yaml
+type: NormalExercise
+key: c5e9f9ac74
+xp: 100
+```
+
+
+
+`@instructions`
+<!-- Guidelines for instructions https://instructor-support.datacamp.com/en/articles/2375526-course-coding-exercises. -->
+- Instruction 1
+- Instruction 2
+
+`@hint`
+<!-- Examples of good hints: https://instructor-support.datacamp.com/en/articles/2379164-hints-best-practices. -->
+- This is an example hint.
+- This is an example hint.
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+
+```
+
+`@solution`
+```{python}
+
+```
+
+`@sct`
+```{python}
+# Examples of good success messages: https://instructor-support.datacamp.com/en/articles/2299773-exercise-success-messages.
 ```
