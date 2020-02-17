@@ -31,7 +31,7 @@ key: 4cb6ae0739
 
 - PDF format is the preferred method of reporting in Data Science {{2}}
 
-- Open source tools to aid in automated pdf report generation in Python: {{3}}
+- Open source tools to aid in automated PDF report generation in Python: {{3}}
 
 	* Pandas {{4}}
     
@@ -57,7 +57,7 @@ key: 0b641e6ccd
 ![](https://assets.datacamp.com/production/repositories/5657/datasets/06ebc5cd542e62ecacdcc7aefbcc6feaaa09b92c/df_0_ss.png)
 
 `@script`
-Let’s say you want to print PDFs of tables that show the growth of a bank account. Each table shows the growth rate year by year of $100, $500, $20,000, and $50,000 dollars. Each separate pdf report uses a different interest rate to calculate the growth rate. We’ll need 5 different reports, each of which prints tables with 1%, 2%, 3%, 4%, 5% interest rates, respectively.
+Let’s say you want to print PDFs of tables that show the growth of a bank account. Each table shows the growth rate year by year of $100, $500, $20,000, and $50,000 dollars. Each separate PDF report uses a different interest rate to calculate the growth rate. We will need 5 different reports, each of which prints tables with 1%, 2%, 3%, 4%, 5% interest rates, respectively.
 
 ---
 
@@ -66,30 +66,11 @@ Let’s say you want to print PDFs of tables that show the growth of a bank acco
 ```yaml
 type: FullSlide
 key: 40ab409493
-code_zoom: 30
+code_zoom: 71
 ```
 
 `@part1`
 ```
-<head>
-	<style>
-		table {
-		  font-family: arial, sans-serif;
-		  border-collapse: collapse;
-		  width: 100%;
-		}
-
-		td, th {
-		  border: 1px solid #dddddd;
-		  text-align: left;
-		  padding: 6px;
-		}
-
-		tr:nth-child(even) {
-		  background-color: #dddddd;
-		}
-	</style>
-</head>
 <body>
     <h1>Interest Rate: {{ interest_rate * 100 }}%</h1>
     <table>
