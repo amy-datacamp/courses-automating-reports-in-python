@@ -202,34 +202,73 @@ key: c5e9f9ac74
 xp: 100
 ```
 
+The final step of the creating an automated PDF report in Python is that we need to convert the HTML files that we created to PDFs. To do this, we use `pdfkit`. All you have to do is iterate through your HTML files and then use a single line of code from `pdfkit` to each file to convert it into a PDF. All of this code combined will pop out the following HTML files with PDF versions.
 
+Please note that the html files that you have created in previous exercise have already been loaded for you.
 
 `@instructions`
-<!-- Guidelines for instructions https://instructor-support.datacamp.com/en/articles/2375526-course-coding-exercises. -->
-- Instruction 1
-- Instruction 2
+- Import the pdfkit package into Python environment
+- Use a for loop to convert html documents to pdf documents each time changing the html suffix to pdf suffix
 
 `@hint`
-<!-- Examples of good hints: https://instructor-support.datacamp.com/en/articles/2379164-hints-best-practices. -->
-- This is an example hint.
-- This is an example hint.
+- pdfkit can be imported using `pdfkit` package
+- There are 5 html files that you have created earlier. Check the video on converting html to pdf in pdfkit package
 
 `@pre_exercise_code`
 ```{python}
+import pandas as pd
+import pdfkit
+import jinja2
 
+interest_rates = [i*.01 for i in range(1,6)]
+initial_account_sizes = [100, 500, 20000, 50000]
+data_frames = []
+for interest_rate in interest_rates:
+    df = {}
+    for initial_account_size in initial_account_sizes:
+        df['Account Size: ' + str(initial_account_size)] = [initial_account_size * (1 + interest_rate) ** year for year in range(1, 21)]
+    df = pd.DataFrame(df)
+    df.index.name = 'year'
+    data_frames.append({'df':df,
+        'interest_rate':interest_rate})
+
+templateLoader = jinja2.FileSystemLoader(searchpath="./")
+templateEnv = jinja2.Environment(loader=templateLoader)
+template_file = "pdf_interest_report.html"
+template = templateEnv.get_template(template_file)
+
+for d in data_frames:
+    outputText = template.render(df=d['df'],
+            interest_rate=d['interest_rate'])
+    html_file = open(str(int(d['interest_rate'] * 100)) + '.html', 'w')
+    html_file.write(outputText)
+    html_file.close()
+    
+for i in range(1,6):
+    pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
 ```
 
 `@sample_code`
 ```{python}
+- Import the pdfkit package into Python environment
+import pdfkit
 
+- Use a for loop to convert html documents to pdf documents each time changing the html suffix to pdf suffix
+for i in range(1,____):
+    pdfkit.____(str(i) + ____, str(i) + ____)
 ```
 
 `@solution`
 ```{python}
+- Import the pdfkit package into Python environment
+import pdfkit
 
+- Use a for loop to convert html documents to pdf documents each time changing the html suffix to pdf suffix
+for i in range(1,6):
+    pdfkit.from_file(str(i) + '.html', str(i) + '.pdf')
 ```
 
 `@sct`
 ```{python}
-# Examples of good success messages: https://instructor-support.datacamp.com/en/articles/2299773-exercise-success-messages.
+Execellent work on automating the PDF reporting in Python. Now you can go ahead and play with templates and generate even beautiful pdf reports
 ```
