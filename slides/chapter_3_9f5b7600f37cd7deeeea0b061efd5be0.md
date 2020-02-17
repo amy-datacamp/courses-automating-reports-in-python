@@ -3,7 +3,7 @@ key: 9f5b7600f37cd7deeeea0b061efd5be0
 title: 'Insert title here'
 ---
 
-## Create an automated PDF report using Jinja2 and pdfkit
+## Create an automated PDF report
 
 ```yaml
 type: TitleSlide
@@ -15,7 +15,7 @@ name: Upendra Devisetty
 title: Data Scientist, Greenlight Biosciences
 
 `@script`
-Automated report generation takes away the pain of manually generating reports one at a time. In this video, we will explore how we can automate the process of report generation using a simple python script
+Automated report generation takes away the pain of manually generating reports one at a time. In this lesson, we will explore how we can automate the process of PDF report generation using a simple python script
 
 ---
 
