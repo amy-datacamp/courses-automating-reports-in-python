@@ -13,7 +13,7 @@ xp: 100
 
 The most preferred method of report generation for a Data Scientist is a PDF report. In this 3-part capstone exercise, we are going to use the following process flow to create a multi-page PDF document using Pandas, Jinja2 and pdfkit
 
-![https://assets.datacamp.com/production/repositories/5657/datasets/d30c50bc96e3595d3426d00d35dbe8ad85baaaa1/pdf-conversion-pipeline-ud.png](pipeline)
+![pipeline](https://assets.datacamp.com/production/repositories/5657/datasets/d30c50bc96e3595d3426d00d35dbe8ad85baaaa1/pdf-conversion-pipeline-ud.png)
 
 Let’s say you want to print PDFs of tables that show the growth of a bank account. Each table shows the growth rate year by year of $100, $500, $20,000, and $50,000 dollars. Each separate PDF report uses a different interest rate to calculate the growth rate. We will need 5 different reports, each of which prints tables with 1%, 2%, 3%, 4%, 5% interest rates, respectively.
 
